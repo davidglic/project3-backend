@@ -1,15 +1,40 @@
 const Drink = require('../models').Drink
 const User = require('../models').User
 
-const newUser = (req, res) => {
-    res.send("newUser")
+const constants = require('../constants')
+
+const createUser = (req, res) => {
+    console.log(req.body)
+    User.findOne({
+        where: {username: req.body.username}
+    }).then(resp => {
+        console.log("query done")
+        if (resp === null) {
+
+            const thisUser = {
+                name: req.body.name,
+                username: req.body.username,
+                password: req.body.password,
+                email: req.body.email
+            }
+             
+            User.create(thisUser).then(newUser => {
+                console.log("create done")
+                res.status(constants.SUCCESS).json(newUser)
+            })
+        } else {
+            res.status(constants.BAD_REQUEST).send('Username already in use.')
+        }
+    }).catch(err => {
+        res.status(constants.BAD_REQUEST).send(`Error: ${err}`)
+    })
 }
 
 const loadUser = (req, res) => {
     User.findOne({
         where: {username: req.params.username}
     }).then(resp => {
-        res.send(resp).json()
+        res.status(constants.SUCCESS).json(resp)
     })
     
 }
@@ -27,7 +52,7 @@ const deleteUser = (req, res) => {
 }
 
 module.exports = {
-    newUser,
+    createUser,
     loginUser,
     updateUser,
     deleteUser,

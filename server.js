@@ -4,7 +4,7 @@ const app = express()
 // const Drink = require('./models').Drink
 // const User = require('./models').User
 const bodyParser = require('body-parser')
-// app.use(bodyParser.urlencoded({extended:false})) //apply this to all app requests. gives us req.body
+app.use(bodyParser.urlencoded({extended:false})) //apply this to all app requests. gives us req.body
 
 app.use(bodyParser.json());
 
