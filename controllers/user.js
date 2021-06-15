@@ -59,8 +59,32 @@ const loginUser = (req, res) => {
 }
 
 const updateUser = (req, res) => {
-    res.send("updateUser")
+    User.findOne({
+        where: {username: req.params.username}
+    }).then(resp => {
+        
+        if (resp != null) {
+
+            const updatedUser = {
+                name: req.body.name,
+                username: req.body.username,
+                password: req.body.password,
+                email: req.body.email
+            }
+
+            User.update(updatedUser, {where: {id: resp.id}, returning: true})
+                .then(response => {
+                    res.status(constants.SUCCESS).json(response)
+                })
+          
+        } else {
+            res.status(constants.BAD_REQUEST).send('Error: Username not found.')
+        }
+    }).catch(err => {
+        res.status(constants.BAD_REQUEST).send(`Error: ${err}`)
+    })
 }
+
 
 const deleteUser = (req, res) => {
     res.send("deleteUser")
