@@ -1,0 +1,23 @@
+MVP:
+-user login
+-can save favorites
+-search cocktails
+-load API info for indiv cocktail
+
+
+Silver:
+-styling
+-pull popular cocktails from API
+-SHow random cocktails
+-Show images on favorites.
+-persistent logins
+-Printable/exportable Favorites list with recipes
+
+
+Gold:
+-Included Menu to expand favorites
+-comments on drinks
+
+
+www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+https://github.com/davidglic/project3-backend.git

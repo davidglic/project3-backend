@@ -1,0 +1,14 @@
+Backend Routes:
+Create user = .post /new
+login user = .get /user/:username
+update user = .post /user/:id
+delete user = .delete /user/:id
+
+
+Frontend Routes:
+
+home /
+profile /profile
+search /search
+drink /drink/:id
+signup /signup
