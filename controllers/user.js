@@ -64,7 +64,6 @@ const updateUser = (req, res) => {
     }).then(resp => {
         
         if (resp != null) {
-
             const updatedUser = {
                 name: req.body.name,
                 username: req.body.username,
@@ -87,7 +86,25 @@ const updateUser = (req, res) => {
 
 
 const deleteUser = (req, res) => {
-    res.send("deleteUser")
+    User.findOne({
+        where: {username: req.params.username}
+    }).then(resp => {
+        
+        if (resp != null) {
+            
+            
+            //destroy sesssion here in future....
+            User.destroy({where: {id: resp.id}})
+                .then(response => {
+                    res.status(constants.SUCCESS).send('User deleted.')
+                })
+          
+        } else {
+            res.status(constants.BAD_REQUEST).send('Error: Username not found.')
+        }
+    }).catch(err => {
+        res.status(constants.BAD_REQUEST).send(`Error: ${err}`)
+    })
 }
 
 module.exports = {
