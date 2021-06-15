@@ -1,0 +1,22 @@
+{
+  "name": "cocktail-app",
+  "version": "1.0.0",
+  "description": "Some text in here.\r PAP text in here.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidglic/project3-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidglic/project3-backend/issues"
+  },
+  "homepage": "https://github.com/davidglic/project3-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0"
+  }
+}
