@@ -58,7 +58,10 @@ const addDrink = (req, res) => {
 }
 
 const deleteDrink = (req, res) => {
-    res.send("deleteDrink")
+    Drink.destroy({where: {id: req.params.id}})
+        .then(response => {
+            res.status(constants.SUCCESS).send('Drink Deleted.')
+        })
 }
 
 module.exports = {
