@@ -96,7 +96,7 @@ const deleteUser = (req, res) => {
             //destroy sesssion here in future....
             User.destroy({where: {id: resp.id}})
                 .then(response => {
-                    res.status(constants.SUCCESS).send('User deleted.')
+                    res.status(constants.SUCCESS).send('User Deleted.')
                 })
           
         } else {
