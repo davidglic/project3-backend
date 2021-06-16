@@ -1,8 +1,13 @@
 Backend Routes:
-Create user = .post /new
-login user = .get /user/:username
-update user = .post /user/:id
-delete user = .delete /user/:id
+Create user = .post /new ctrl newUser pass username, name, password, and email
+login user = .get /user/login/:username loginUser
+load User = .get /user/:username
+update user = .put /user/:username updateUser pass username, name, password, and email
+delete user = .delete /user/:username deleteUser
+
+get cocktails = .get /drink/:username  getDrinks
+add cocktail = .post /:username/ addDrink pass drinkID, and name.
+delete cocktail = .delete /drink/:id deleteDrink
 
 
 Frontend Routes:
@@ -12,3 +17,6 @@ profile /profile
 search /search
 drink /drink/:id
 signup /signup
+
+Backend Route Examples:
+
