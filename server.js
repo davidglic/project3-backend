@@ -1,8 +1,20 @@
 //imports
 const express = require('express')
 const app = express()
+const cors = require('cors');
+
 // const Drink = require('./models').Drink
 // const User = require('./models').User
+
+const corsOptions = {
+    origin: ['http://localhost:3000'],
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true, //allows session cookies to be sent back and forth
+    optionsSuccessStatus: 200 //legacy browsers
+  }
+
+app.use(cors(corsOptions))
+
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended:false})) //apply this to all app requests. gives us req.body
 
