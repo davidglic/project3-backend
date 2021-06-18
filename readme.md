@@ -14,10 +14,12 @@ Body-Parser <br>
 CORS<br>
 Express<br>
 
-#Planned Features:
+# Planned Features:
 Backend authoriztaion.
 
-#Repository
+# Repositories
+[BE Repository](https://github.com/davidglic/project3-backend)
+[FE Repository] (https://github.com/davidglic/project3-frontend)
 
 
 
