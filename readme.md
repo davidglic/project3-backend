@@ -15,7 +15,7 @@ CORS<br>
 Express<br>
 
 # Planned Features:
-Backend authoriztaion.
+Backend authoriztaion with sessions management.
 
 # Repositories:
 [BE Repository](https://github.com/davidglic/project3-backend) <br>
