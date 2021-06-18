@@ -14,8 +14,18 @@ Body-Parser <br>
 CORS<br>
 Express<br>
 
+# Features:
+Full CRUD for users. <br>
+Models and routes for favorited drinks. <br>
+Accessible through API calls.
+
 # Planned Features:
 Backend authoriztaion with sessions management.
+
+# Install Instructions:
+Install dependencies:
+Create models, controllers and routes.
+Seed: Users and Drinks.
 
 # Repositories:
 [BE Repository](https://github.com/davidglic/project3-backend) <br>
