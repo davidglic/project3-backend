@@ -17,9 +17,9 @@ Express<br>
 # Planned Features:
 Backend authoriztaion.
 
-# Repositories
-[BE Repository](https://github.com/davidglic/project3-backend)
-[FE Repository] (https://github.com/davidglic/project3-frontend)
+# Repositories:
+[BE Repository](https://github.com/davidglic/project3-backend) <br>
+[FE Repository](https://github.com/davidglic/project3-frontend)
 
 
 
