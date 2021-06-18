@@ -3,6 +3,7 @@ const User = require('../models').User
 
 const constants = require('../constants')
 
+// finds user, if user found -- each drink with userID found.
 const getDrinks = (req, res) => {
     User.findOne({
         where: {username: req.params.username}
@@ -17,7 +18,6 @@ const getDrinks = (req, res) => {
 
             Drink.findAll({
                 where: {userID: resp.id},
-                // include: [{model: User}]
             }).then((response) => {
                 res.send(response)
             })
@@ -31,7 +31,7 @@ const getDrinks = (req, res) => {
     
     
 }
-
+// finds user, if user found -- each drink added by user will be tagged with found userID.
 const addDrink = (req, res) => {
     User.findOne({
         where: {username: req.params.username}
@@ -56,7 +56,7 @@ const addDrink = (req, res) => {
         res.status(constants.BAD_REQUEST).send(`Error: ${err}`)
     })
 }
-
+// removes drink from user list by removing tagged userID 
 const deleteDrink = (req, res) => {
     Drink.destroy({where: {id: req.params.id}})
         .then(response => {
@@ -70,15 +70,3 @@ module.exports = {
     addDrink,
     deleteDrink
 }
-
-// const test = {data: [1,2,3,4,5,6]}
-// app.get("/", (req, res) => {
-//     Drink.findAll({
-//         where: {id: 2},
-//         include: [{model: User}]
-//     }).then((response) => {
-//         res.send(response)
-//     })
-   
-    
-// })

@@ -3,15 +3,12 @@ const express = require('express')
 const app = express()
 const cors = require('cors');
 
-// const Drink = require('./models').Drink
-// const User = require('./models').User
-
 const corsOptions = {
     origin: ['http://localhost:3000'],
     methods: "GET,POST,PUT,DELETE",
     credentials: true, //allows session cookies to be sent back and forth
     optionsSuccessStatus: 200 //legacy browsers
-  }
+}
 
 app.use(cors(corsOptions))
 
@@ -25,18 +22,6 @@ const routes = require('./routes')
 //routes
 app.use('/drink', routes.drink) 
 app.use('/user', routes.user)
-
-// const test = {data: [1,2,3,4,5,6]}
-// app.get("/", (req, res) => {
-//     Drink.findAll({
-//         where: {id: 2},
-//         include: [{model: User}]
-//     }).then((response) => {
-//         res.send(response)
-//     })
-   
-    
-// })
 
 //run server
 app.listen(3001, () => {

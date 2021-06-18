@@ -3,6 +3,7 @@ const User = require('../models').User
 
 const constants = require('../constants')
 
+//targets username -- if username not in use allows the creation of thisUser thus creating newUser
 const createUser = (req, res) => {
     
     User.findOne({
@@ -30,6 +31,7 @@ const createUser = (req, res) => {
     })
 }
 
+// targets username -- when found loads user info
 const loadUser = (req, res) => {
     User.findOne({
         where: {username: req.params.username}
@@ -39,6 +41,7 @@ const loadUser = (req, res) => {
     
 }
 
+// targets username -- if found checks password accuracy
 const loginUser = (req, res) => {
     User.findOne({
         where: {username: req.params.username}
@@ -58,6 +61,7 @@ const loginUser = (req, res) => {
     })
 }
 
+// targets username -- if found allows user to target found info and update information to updatedUser
 const updateUser = (req, res) => {
     User.findOne({
         where: {username: req.params.username}
@@ -84,14 +88,13 @@ const updateUser = (req, res) => {
     })
 }
 
-
+// targets username -- if found allows user to delete all information associated to username
 const deleteUser = (req, res) => {
     User.findOne({
         where: {username: req.params.username}
     }).then(resp => {
         
-        if (resp != null) {
-            
+        if (resp != null) {            
             
             //destroy sesssion here in future....
             User.destroy({where: {id: resp.id}})
@@ -114,15 +117,3 @@ module.exports = {
     deleteUser,
     loadUser
 }
-
-// const test = {data: [1,2,3,4,5,6]}
-// app.get("/", (req, res) => {
-//     Drink.findAll({
-//         where: {id: 2},
-//         include: [{model: User}]
-//     }).then((response) => {
-//         res.send(response)
-//     })
-   
-    
-// })
