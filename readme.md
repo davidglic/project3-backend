@@ -6,7 +6,7 @@ Using TheCocktailDB API our application allows users to search and pin over 600 
 [Models](https://res.cloudinary.com/dqutmt6jn/image/upload/v1624036030/models_jb7njt.png)<br>
 [Routes](https://res.cloudinary.com/dqutmt6jn/image/upload/v1624036778/RoutesP3_copabo.png)
 
-# Backend Dependencies:
+# Back-end Dependencies:
 Sequelize <br>
 Sequlize CLI <br>
 PG <br>
@@ -16,11 +16,11 @@ Express<br>
 
 # Features:
 Full CRUD for users. <br>
-Models and routes for favorited drinks. <br>
+Models and routes for favorite drinks. <br>
 Accessible through API calls.
 
 # Planned Features:
-Backend authoriztaion with sessions management.
+Back-end authorization with sessions management.
 
 # Install Instructions:
 Install dependencies:
