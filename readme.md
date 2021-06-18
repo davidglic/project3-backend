@@ -14,6 +14,11 @@ Body-Parser <br>
 CORS<br>
 Express<br>
 
+#Planned Features:
+Backend authoriztaion.
+
+#Repository
+
 
 
 
