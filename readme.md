@@ -4,6 +4,6 @@ Using TheCocktailDB API our application allows users to search and pin over 600 
 
 # Planning:
 ![Models](https://res.cloudinary.com/dqutmt6jn/image/upload/v1624036030/models_jb7njt.png)
-![Routes](https://res.cloudinary.com/dqutmt6jn/raw/upload/v1624036033/routes_m4kbp4.txt)
+![Routes](https://res.cloudinary.com/dqutmt6jn/image/upload/v1624036778/RoutesP3_copabo.png)
 
 
